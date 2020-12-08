@@ -1,0 +1,18 @@
+You can add more keyframes to have funnier animations:
+@keyframes spin {
+0% {
+transform: rotateZ(0);
+}
+25% {
+transform: rotateZ(30deg);
+}
+50% {
+transform: rotateZ(270deg);
+}
+75% {
+transform: rotateZ(180deg);
+}
+100% {
+transform: rotateZ(360deg);
+}
+}
