@@ -8,6 +8,6 @@ Hye developer I am going to do 100 Days Dev and Coding Challenge.
 ### Basics of Card - https://codepen.io/sk3213/pen/mdrrPYJ?editors=1100
 ## Day 4:
 ### Basics of Grid -
-https://codepen.io/sk3213/pen/RwGGzvK
-https://codepen.io/sk3213/pen/PoGGVwL?editors=1100
+#### https://codepen.io/sk3213/pen/RwGGzvK
+#### https://codepen.io/sk3213/pen/PoGGVwL?editors=1100
 
