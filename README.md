@@ -13,3 +13,5 @@ Hye developer I am going to do 100 Days Dev and Coding Challenge.
 ## Day 5-8 [API]:
 If it doesn't work this is just beacause of limited requests period. Hope you don't mind 😁
 ### https://codesandbox.io/s/frosty-cherry-q1086?file=/src/App.js
+## Day 6:
+### Please review build folder for PWA with commit - COVID PWA
