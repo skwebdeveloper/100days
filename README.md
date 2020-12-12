@@ -14,4 +14,5 @@ Hye developer I am going to do 100 Days Dev and Coding Challenge.
 If it doesn't work this is just beacause of limited requests period. Hope you don't mind 😁
 ### https://codesandbox.io/s/frosty-cherry-q1086?file=/src/App.js
 ## Day 6:
-### Please review build folder for PWA with commit - COVID PWA
+## https://awesome-bose-95715d.netlify.app/
+### Please review build folder for PWA with commit - COVID PWA 
