@@ -1,6 +1,6 @@
 {
-  "short_name": "StarWars",
-  "name": "Quotes Startwars",
+  "short_name": "Covid Tracker",
+  "name": "Covid updates",
   "icons": [
     {
       "src": "/images/logo.png",
@@ -12,5 +12,5 @@
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
-}
 
+}
