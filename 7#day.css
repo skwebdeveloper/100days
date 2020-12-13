@@ -1,0 +1,91 @@
+body{
+background-color: #040C14;
+font-family: 'Montserrat', sans-serif;
+color: #DCDCDC;
+}
+
+h1{
+  z-index: -1;
+  font-size: 120px;
+  position: absolute;
+  text-align: center;
+}
+
+h2,p{
+  padding: 16px;
+  margin: 5px;
+}
+
+.container{
+z-index: 2px;
+background: rgba( 255, 255, 255, 0.25 );
+box-shadow: 0 8px 32px 0 rgba( 0,50,50, 0.37 );
+backdrop-filter: blur( 4px );
+-webkit-backdrop-filter: blur( 4px );
+border-radius: 10px;
+margin: 0 auto;
+width: 60%;
+height: 50vh;
+animation: card 3s infinite;
+}
+
+ul{
+  display: flex;
+  flex-direction: row;
+}
+li{
+  margin: 2px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  padding: 30px;
+  font-size: 30px;
+  text-decoration: none;
+  animation: anyname 1s linear infinite;
+}
+
+@keyframes card{
+  0%{
+    transform: translateX(20px);
+  }
+  50%{
+    transform: translateX(180px);
+  }
+  75%{
+    transform: translateX(-180px); 
+  }
+  100%{ 
+    transform: translateX(20px);
+  }
+}  
+
+
+@keyframes anyname{
+  0%{
+    transform: rotateZ(0);
+  }
+  50%{
+    transform: rotateZ(180deg);
+  }
+  100%{ 
+    transform: rotateZ(360deg);
+  }
+}  
+
+.container:hover{
+ cursor: pointer;
+ transition: 1s linear;
+}
+
+.hero__buttons{
+  width: 16%;
+  border-radius: 5px;
+  background-color: white;
+  padding: 16px;
+  margin: 0 auto;
+}
+
+a{
+    text-decoration: none;
+  
+}
