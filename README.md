@@ -16,3 +16,6 @@ If it doesn't work this is just beacause of limited requests period. Hope you do
 ## Day 6:
 ## https://awesome-bose-95715d.netlify.app/
 ### Please review build folder for PWA with commit - COVID PWA 
+## Day 7:
+## https://codepen.io/sk3213/pen/PoGWOgb?editors=1100
+
