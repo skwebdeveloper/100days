@@ -1,0 +1,24 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.happy{
+    animation: name 1s infinite;
+}
+
+.heading__main{
+  text-align: center;
+  font-size: 40px;
+}
+
+@keyframes name{
+  0%{
+    transform: rotateZ(0);
+  }
+  50%{
+    transform: rotateZ(180deg);
+  }
+  100%{ 
+    transform: rotateZ(360deg);
+  }
+} 
