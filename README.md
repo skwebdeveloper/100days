@@ -23,5 +23,5 @@ If it doesn't work this is just beacause of limited requests period. Hope you do
 ## Day 9:
 ### https://codepen.io/sk3213/pen/WNGRqXo?editors=1100
 ## Day 10:
-### https://jhyon.csb.app/
+### https://jhyon.csb.app/   -- Might be some time it doesn't work just because of heavy request.
 
