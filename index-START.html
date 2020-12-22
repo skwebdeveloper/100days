@@ -2,106 +2,111 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JS Drum Kit #14 data-key</title>
-  <link rel="stylesheet" href="style.css">
+  <title>#15 Day Clock</title>
 </head>
 <body>
 
-<h1>Drum Machines</h1>
-  <div class="keys">
-    <div data-key="65" class="key">
-      <kbd>A</kbd>
-      <span class="sound">Clap</span>
-    </div>
-    <div data-key="83" class="key">
-      <kbd>S</kbd>
-      <span class="sound">Hihat</span>
-    </div>
-    <div data-key="68" class="key">
-      <kbd>D</kbd>
-      <span class="sound">Kick</span>
-    </div>
-    <div data-key="70" class="key">
-      <kbd>F</kbd>
-      <span class="sound">Openhat</span>
-    </div>
-    <div data-key="71" class="key">
-      <kbd>G</kbd>
-      <span class="sound">Boom</span>
-    </div>
-    <div data-key="72" class="key">
-      <kbd>H</kbd>
-      <span class="sound">Ride</span>
-    </div>
-    <div data-key="74" class="key">
-      <kbd>J</kbd>
-      <span class="sound">Snare</span>
-    </div>
-    <div data-key="75" class="key">
-      <kbd>K</kbd>
-      <span class="sound">Tom</span>
-    </div>
-    <div data-key="76" class="key">
-      <kbd>L</kbd>
-      <span class="sound">Tink</span>
+
+    <div class="clock">
+      <div class="clock-face">
+        <div class="hand hour-hand"></div>
+        <div class="hand min-hand"></div>
+        <div class="hand second-hand"></div>
+      </div>
     </div>
 
 
-    <div data-key="81" class="key">
-      <kbd>Q</kbd>
-      <span class="sound">Rock Music</span>
-    </div>
+  <style>
+    html {
+      background: #181d20 url(https://images.unsplash.com/photo-1608489760698-b06dadc268aa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1142&q=80);
+      background-size: cover;
+      background-position: center;
+      font-family: 'helvetica neue';
+      text-align: center;
+      font-size: 10px;
+      font-family:Georgia, 'Times New Roman', Times, serif
+    }
+    .list{
+      z-index: 2;
+      position: absolute;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      justify-items: center;
+      padding: 16px;
+      margin: 60px;
+    }
+    body {
+      margin: 0;
+      font-size: 2rem;
+      display: flex;
+      flex: 1;
+      min-height: 100vh;
+      align-items: center;
+    }
+    .clock {
+      width: 20rem;
+      height: 20rem;
+      border: 2rem solid #00FF33;
+      border-radius: 50%;
+      margin: 0 auto;
+      position: relative;
+      padding: 2rem;
+      box-shadow:
+        0 0 0 4px rgba(0,0,0,0.1),
+        inset 0 0 0 3px #00FF00,
+        inset 0 0 10px black,
+        0 0 10px rgba(0,0,0,0.2);
+    }
+
+    .clock-face {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform: translateY(-3px);
+    }
+
+    .hand {
+      width: 50%;
+      height: 6px;
+      background: black;
+      position: absolute;
+      top: 50%;
+      transform: rotate(90deg);
+      transform-origin: 100%;
+      transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transform: all 0.05s;
+    }
 
 
-    <div data-key="87" class="key">
-      <kbd>W</kbd>
-      <span class="sound">Soft Guitar</span>
-    </div>
 
 
-        <div data-key="69" class="key">
-      <kbd>E</kbd>
-      <span class="sound">HipHop</span>
-    </div>
+  </style>
+
+  <script>
+  function setTiming(){
+  const secondHand = document.querySelector('.second-hand');
+  const minuteHand = document.querySelector('.min-hand');
+  const hourHand = document.querySelector('.hour-hand');
+
+ 
+  const date = new Date();
+  const seconds = date.getSeconds();
+  const secondDegree = ((seconds / 60) * 360) + 90;
+  secondHand.style.transform = `rotate(${secondDegree}deg)`;
 
 
+  const minutes = date.getMinutes();
+  const minutesDegree = ((minutes / 60) * 360) + 90;
+  minuteHand.style.transform = `rotate(${minutesDegree}deg)`;
 
-
-
-  </div>
-
-  <audio data-key="65" src="sounds/clap.wav"></audio>
-  <audio data-key="83" src="sounds/hihat.wav"></audio>
-  <audio data-key="68" src="sounds/kick.wav"></audio>
-  <audio data-key="70" src="sounds/openhat.wav"></audio>
-  <audio data-key="71" src="sounds/boom.wav"></audio>
-  <audio data-key="72" src="sounds/ride.wav"></audio>
-  <audio data-key="74" src="sounds/snare.wav"></audio>
-  <audio data-key="75" src="sounds/tom.wav"></audio>
-  <audio data-key="76" src="sounds/tink.wav"></audio>
-  <audio data-key="81" src="sounds/guitar.mp3"></audio>
-  <audio data-key="87" src="sounds/softguitar.mp3"></audio>
-  <audio data-key="69" src="sounds/HipHop.mp3"></audio>
-
-<script>
-  window.addEventListener("keydown", function(e){
-  const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-  const keypress = document.querySelector(`.key[data-key="${e.keyCode}"]`);
-  if(!audio) return; 
-  audio.currentTime = 0;
-  audio.play();
-  keypress.classList.add("playing");  // Selecting a particular element and style it
-  function removetransition(e){
-  if(e.propertyName !== 'transform') return;
-  this.classList.remove("playing");
+  const hour = date.getHours();
+  const hoursDegree = ((hour / 12) * 360) + 90;
+  hourHand.style.transform = `rotate(${hoursDegree}deg)`;
 }
 
-  const keys = document.querySelectorAll(".key");
-  keys.forEach((key) => key.addEventListener('transitionend', removetransition));
+setInterval(setTiming, 1000);
 
-})
-
-</script>
+  </script>
 </body>
 </html>
