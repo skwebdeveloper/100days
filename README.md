@@ -30,3 +30,8 @@ If it doesn't work this is just beacause of limited requests period. Hope you do
 ### Piano Drum 
 ## Day 15:
 ### https://codepen.io/sk3213/pen/LYRjvwa
+## Day 16:
+### https://codepen.io/sk3213/pen/yLazagJ
+## Day 17:
+### https://codepen.io/sk3213/pen/RwGLJRw
+
