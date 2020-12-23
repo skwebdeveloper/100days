@@ -1,0 +1,58 @@
+body{
+      font-family: 'Varela Round', sans-serif;
+      text-align: center;
+      font-weight: 100;
+}
+h1{
+    font-size: 4rem;
+}
+.ui__part{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+}
+.li__part{
+    display: flex;
+    color: white;
+    text-align: left;
+    flex-flow: column wrap;
+    list-style: none;
+    padding: 16px 32px;
+    margin: 10px;
+    width: 200px;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    background-color: black;
+}
+.controls {
+      align-items: center;
+      border-radius: 5px;
+    }
+
+input {
+      width: 100px;
+    }
+
+.button{
+        padding: 16px 32px;
+        margin: 10px;
+        background-color: var(--base);
+      }
+h2{
+    font-size: var(--font);
+}
+
+
+.images{
+    position: relative; 
+ }
+
+.center {
+  position: absolute;
+  top: 50%;
+  margin: 0 auto;
+  color: white;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

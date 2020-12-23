@@ -2,110 +2,101 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>#15 Day Clock</title>
+  <title>Scoped CSS Variables and JS</title>
+  <link rel="stylesheet" href="17day.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+
 </head>
 <body>
+  <h1>Developers Testing Tool <span style="--background: #fff;" class="seperate">JS</span></h1>
 
-
-    <div class="clock">
-      <div class="clock-face">
-        <div class="hand hour-hand"></div>
-        <div class="hand min-hand"></div>
-        <div class="hand second-hand"></div>
-      </div>
+  <div class="controls"> 
+<!-- Working -->
+    <ul class="ui__part">
+      <li class="li__part">
+        <label for="blur">Blur</label>
+        <input id="blur" type="range" name="blur" data-sizing="px" min="0" max="100" value="0">
+      </li>
+      <li class="li__part">
+        <label for="padding">Padding</label>
+        <input id="spacing" type="range" name="spacing" data-sizing="px" min="0" max="100" value="10">
+      </li>
+      <li class="li__part">
+        <label for="margin">Height</label>
+        <input id="height" type="range" name="height" data-sizing="px" min="100" max="1000" value="100">
+      </li>
+      <li class="li__part">
+        <label for="font">Font</label>
+        <input id="font" type="range" name="font" data-sizing="px" min="16" max="60" value="16">
+      </li>
+      <li class="li__part">
+        <label for="color">Color</label>
+        <input id="base" type="color" name="base" value="#BADA55">
+      </li>
+      <li class="li__part">
+        <label for="width">Width</label>
+        <input id="width" type="range" name="width" data-sizing="px" min="100" max="1000" value="100">
+      </li>
+      <li class="li__part">
+        <label for="transition">Border</label>
+        <input id="border" type="range" name="border" data-sizing="px" min="0" max="100" value="2">
+      </li>
+      <li class="li__part">
+        <label for="background">Background </label>
+        <input id="background" type="color" name="background" value="#uiuiui">
+      </li>
+    </ul>
+    <div class="images">
+      <img src="https://images.unsplash.com/photo-1542736488-1967b42fcf54?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=944&q=80">
+      <div class="center">Text Changes</div>
     </div>
-
-
+  </div>
   <style>
-    html {
-      background: #181d20 url(https://images.unsplash.com/photo-1608489760698-b06dadc268aa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1142&q=80);
-      background-size: cover;
-      background-position: center;
-      font-family: 'helvetica neue';
-      text-align: center;
-      font-size: 10px;
-      font-family:Georgia, 'Times New Roman', Times, serif
-    }
-    .list{
-      z-index: 2;
-      position: absolute;
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      justify-items: center;
-      padding: 16px;
-      margin: 60px;
-    }
-    body {
-      margin: 0;
-      font-size: 2rem;
-      display: flex;
-      flex: 1;
-      min-height: 100vh;
-      align-items: center;
-    }
-    .clock {
-      width: 20rem;
-      height: 20rem;
-      border: 2rem solid #00FF33;
-      border-radius: 50%;
-      margin: 0 auto;
-      position: relative;
-      padding: 2rem;
-      box-shadow:
-        0 0 0 4px rgba(0,0,0,0.1),
-        inset 0 0 0 3px #00FF00,
-        inset 0 0 10px black,
-        0 0 10px rgba(0,0,0,0.2);
-    }
-
-    .clock-face {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      transform: translateY(-3px);
-    }
-
-    .hand {
-      width: 50%;
-      height: 6px;
-      background: black;
-      position: absolute;
-      top: 50%;
-      transform: rotate(90deg);
-      transform-origin: 100%;
-      transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      transform: all 0.05s;
-    }
-
-
-
-
+      :root{
+        --base: #ffc600;
+        --background: #ffffff;
+        --spacing: 20px; 
+        --width: 100px;
+        --height: 100px;
+        --blur: 10px;
+        --font: 16px;
+        --height: 100px;
+        --border: 2px;
+      }
+      body{
+        background-color: var(--background);
+      }
+      img{
+        width: var(--width);
+        height: var(--height);
+        background: var(--base);
+        padding: var(--spacing);
+        filter: blur(var(--blur));
+        margin: 0 auto;
+        justify-content: center;
+        display: flex;
+        flex-flow: row wrap;
+        border-radius: 5px;
+        border: var(--border) solid;
+      }
+      .center{
+        font-size: var(--font);
+      }
+      .seperate{
+        color: var(--base);
+      }
   </style>
-
   <script>
-  function setTiming(){
-  const secondHand = document.querySelector('.second-hand');
-  const minuteHand = document.querySelector('.min-hand');
-  const hourHand = document.querySelector('.hour-hand');
-
- 
-  const date = new Date();
-  const seconds = date.getSeconds();
-  const secondDegree = ((seconds / 60) * 360) + 90;
-  secondHand.style.transform = `rotate(${secondDegree}deg)`;
-
-
-  const minutes = date.getMinutes();
-  const minutesDegree = ((minutes / 60) * 360) + 90;
-  minuteHand.style.transform = `rotate(${minutesDegree}deg)`;
-
-  const hour = date.getHours();
-  const hoursDegree = ((hour / 12) * 360) + 90;
-  hourHand.style.transform = `rotate(${hoursDegree}deg)`;
-}
-
-setInterval(setTiming, 1000);
+    const inputs = document.querySelectorAll('input');
+    const dataoutput = document.querySelector(".dataoutput");
+    function updateconfig(){
+      const suffix = this.dataset.sizing || " ";
+      // Kind of selecting whole HTML
+      document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
+    }
+    inputs.forEach(input => input.addEventListener('change', updateconfig));
+    inputs.forEach(input => input.addEventListener('mousemove', updateconfig));
 
   </script>
 </body>
