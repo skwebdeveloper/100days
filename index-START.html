@@ -1,103 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Scoped CSS Variables and JS</title>
-  <link rel="stylesheet" href="17day.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
-
+    <meta charset="UTF-8">
+    <title>Array Cardio 💪</title>
 </head>
+
 <body>
-  <h1>Developers Testing Tool <span style="--background: #fff;" class="seperate">JS</span></h1>
+    <p><em>Psst: have a look at the JavaScript Console</em> 💁</p>
+    <p></p>
+    <script>
+        // Get your shorts on - this is an array workout!
+        // ## Array Cardio Day 1
 
-  <div class="controls"> 
-<!-- Working -->
-    <ul class="ui__part">
-      <li class="li__part">
-        <label for="blur">Blur</label>
-        <input id="blur" type="range" name="blur" data-sizing="px" min="0" max="100" value="0">
-      </li>
-      <li class="li__part">
-        <label for="padding">Padding</label>
-        <input id="spacing" type="range" name="spacing" data-sizing="px" min="0" max="100" value="10">
-      </li>
-      <li class="li__part">
-        <label for="margin">Height</label>
-        <input id="height" type="range" name="height" data-sizing="px" min="100" max="1000" value="100">
-      </li>
-      <li class="li__part">
-        <label for="font">Font</label>
-        <input id="font" type="range" name="font" data-sizing="px" min="16" max="60" value="16">
-      </li>
-      <li class="li__part">
-        <label for="color">Color</label>
-        <input id="base" type="color" name="base" value="#BADA55">
-      </li>
-      <li class="li__part">
-        <label for="width">Width</label>
-        <input id="width" type="range" name="width" data-sizing="px" min="100" max="1000" value="100">
-      </li>
-      <li class="li__part">
-        <label for="transition">Border</label>
-        <input id="border" type="range" name="border" data-sizing="px" min="0" max="100" value="2">
-      </li>
-      <li class="li__part">
-        <label for="background">Background </label>
-        <input id="background" type="color" name="background" value="#uiuiui">
-      </li>
-    </ul>
-    <div class="images">
-      <img src="https://images.unsplash.com/photo-1542736488-1967b42fcf54?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=944&q=80">
-      <div class="center">Text Changes</div>
-    </div>
-  </div>
-  <style>
-      :root{
-        --base: #ffc600;
-        --background: #ffffff;
-        --spacing: 20px; 
-        --width: 100px;
-        --height: 100px;
-        --blur: 10px;
-        --font: 16px;
-        --height: 100px;
-        --border: 2px;
-      }
-      body{
-        background-color: var(--background);
-      }
-      img{
-        width: var(--width);
-        height: var(--height);
-        background: var(--base);
-        padding: var(--spacing);
-        filter: blur(var(--blur));
-        margin: 0 auto;
-        justify-content: center;
-        display: flex;
-        flex-flow: row wrap;
-        border-radius: 5px;
-        border: var(--border) solid;
-      }
-      .center{
-        font-size: var(--font);
-      }
-      .seperate{
-        color: var(--base);
-      }
-  </style>
-  <script>
-    const inputs = document.querySelectorAll('input');
-    const dataoutput = document.querySelector(".dataoutput");
-    function updateconfig(){
-      const suffix = this.dataset.sizing || " ";
-      // Kind of selecting whole HTML
-      document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix);
-    }
-    inputs.forEach(input => input.addEventListener('change', updateconfig));
-    inputs.forEach(input => input.addEventListener('mousemove', updateconfig));
+        const inventors = [{
+            first: 'Albert',
+            last: 'Einstein',
+            year: 1879,
+            passed: 1955
+        }, {
+            first: 'Saurabh',
+            last: 'Einstein',
+            year: 1879,
+            passed: 1955
+        }, {
+            first: 'Rakhi',
+            last: 'Einstein',
+            year: 1879,
+            passed: 1955
+        }, {
+            first: 'Isaac',
+            last: 'Newton',
+            year: 1643,
+            passed: 1727
+        }, {
+            first: 'Galileo',
+            last: 'Galilei',
+            year: 1564,
+            passed: 1642
+        }, {
+            first: 'Marie',
+            last: 'Curie',
+            year: 1867,
+            passed: 1934
+        }, {
+            first: 'Johannes',
+            last: 'Kepler',
+            year: 1571,
+            passed: 1630
+        }, {
+            first: 'Nicolaus',
+            last: 'CopernicuFs',
+            year: 1473,
+            passed: 1543
+        }, {
+            first: 'Max',
+            last: 'Planck',
+            year: 1858,
+            passed: 1947
+        }, {
+            first: 'Katherine',
+            last: 'Blodgett',
+            year: 1898,
+            passed: 1979
+        }, {
+            first: 'Ada',
+            last: 'Lovelace',
+            year: 1815,
+            passed: 1852
+        }, {
+            first: 'Sarah E.',
+            last: 'Goode',
+            year: 1855,
+            passed: 1905
+        }, {
+            first: 'Lise',
+            last: 'Meitner',
+            year: 1878,
+            passed: 1968
+        }, {
+            first: 'Hanna',
+            last: 'Hammarström',
+            year: 1829,
+            passed: 1909
+        }];
 
-  </script>
+        const people = [
+            'Bernhard, Sandra', 'Bethea, Erin', 'Becker, Carl', 'Bentsen, Lloyd', 'Beckett, Samuel', 'Blake, William', 'Berger, Ric', 'Beddoes, Mick', 'Beethoven, Ludwig',
+            'Belloc, Hilaire', 'Begin, Menachem', 'Bellow, Saul', 'Benchley, Robert', 'Blair, Robert', 'Benenson, Peter', 'Benjamin, Walter', 'Berlin, Irving',
+            'Benn, Tony', 'Benson, Leana', 'Bent, Silas', 'Berle, Milton', 'Berry, Halle', 'Biko, Steve', 'Beck, Glenn', 'Bergman, Ingmar', 'Black, Elk', 'Berio, Luciano',
+            'Berne, Eric', 'Berra, Yogi', 'Berry, Wendell', 'Bevan, Aneurin', 'Ben-Gurion, David', 'Bevel, Ken', 'Biden, Joseph', 'Bennington, Chester', 'Bierce, Ambrose',
+            'Billings, Josh', 'Birrell, Augustine', 'Blair, Tony', 'Beecher, Henry', 'Biondo, Frank'
+        ];
+
+        // Array.prototype.filter()
+        // 1. Filter the list of inventors for those who were born in the 1500's
+        const generate = inventors.filter((invent) => {
+            if (invent.last == "Einstein") {
+                return true;
+            }
+        });
+        console.table(generate);
+
+        // Array.prototype.map()
+        // 2. Give us an array of the inventors first and last names
+        const generatename = inventors.map((inventor) => {
+            return inventor.first + " " + inventor.last;
+        })
+        console.table(generatename);
+
+
+        // Array.prototype.sort()
+        // 3. Sort the inventors by birthdate, oldest to youngest
+        const orderdata = inventors
+            .sort((a, b) => a.year > b.passed ? 1 : -1);
+        console.table(orderdata);
+
+        // OR 
+        const sortfunction = inventors.sort((a, b) => {
+            if (a > b) {
+                return 1;
+            } else {
+                return -1;
+            }
+        })
+        console.table(sortfunction);
+
+
+        // Array.prototype.reduce()
+        // 4. How many years did all the inventors live all together?
+
+
+        const totalyears = inventors.reduce((total, inventor) => {
+            return total + (inventor.passed - inventor.year);
+        }, 0)
+        console.log(totalyears);
+
+        /*        var count = 0;
+                for (var i = 0; i < inventors.length; i++) {
+                    count += inventors[i].year;
+                }
+        */
+        // console.log(count);
+
+
+        // 5. Sort the inventors by years lived
+        const yearlived = inventors.sort((a, b) => {
+            const initial = a.passed - b.year;
+            const final = b.passed - a.year;
+            if (initial > final) return 1;
+            else return -1;
+        })
+
+        console.table(yearlived);
+
+
+        // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
+        // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris'
+
+        /*       const cat = document.querySelector(".mw-category");
+        const links = cat.querySelectorAll('a');
+        const de = links
+            .map(link => links.textContent)
+            .filter(street => street.includes('de'));
+        console.log(cat) */
+
+
+        // 7. sort Exercise
+
+        //      Sort the inventors alphabetically by last name
+        /*       const lastname = inventors.sort((a, b) => {
+                   return (a.last > b.last) ? 1 : -1;
+               });
+               console.table(lastname); */
+
+        //       Sort people Array
+        const peoplearray = people.sort((a, b) => {
+            const [afirst, alast] = a.split(", ");
+            const [bfirst, blast] = b.split(", ");
+            return alast > blast ? 1 : -1;
+        });
+        console.table(peoplearray);
+
+
+
+
+
+        // 8. Reduce Exercise
+        // Sum up the instances of each of these
+        const data = ['car', 'car', 'truck', 'truck', 'bike', 'walk', 'car', 'van', 'bike', 'walk', 'car', 'van', 'car', 'truck'];
+        const cardata = data.reduce((accumulator, item) => {
+            if (!accumulator[item]) {
+                accumulator[item] = 0;
+            }
+            accumulator[item]++;
+            return accumulator;
+        }, {});
+        console.table(cardata);
+    </script>
 </body>
+
 </html>
