@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>#18 Day</title>
+    <link rel="stylesheet" href="18.css">
+    <link href='https://fonts.googleapis.com/css?family=Amatic+SC' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <div class="panels">
+        <div id="happy" class="panel panel1">
+            <p>Just</p>
+            <p>For</p>
+            <p>Money</p>
+        </div>
+        <div class="panel panel2">
+            <p>To</p>
+            <p>whom</p>
+            <p>I love</p>
+        </div>
+        <div class="panel panel3">
+            <p>Always</p>
+            <p>Ready</p>
+            <p>For</p>
+        </div>
+        <div class="panel panel4">
+            <p>Enjoy</p>
+            <p>Every</p>
+            <p>Moment</p>
+        </div>
+        <div class="panel panel5">
+            <p>That's</p>
+            <p>My</p>
+            <p>Lifeline</p>
+        </div>
+    </div>
+
+    <script>
+        const collectpanel = document.querySelectorAll(".panel");
+
+        function toggling() {
+            this.classList.toggle("openpopup");
+        }
+
+        function togglepara(e) {
+            if (e.propertyName.includes('flex')) {
+                this.classList.toggle("open");
+            }
+        }
+        collectpanel.forEach((panel) => panel.addEventListener('click', toggling));
+        collectpanel.forEach((panel) => panel.addEventListener('transitionend', togglepara));
+    </script>
+</body>
+
+</html>
