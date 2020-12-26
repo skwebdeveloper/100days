@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>#19 Day</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <form class="search-form">
+        <input type="text" class="search" placeholder="City or State">
+        <ul class="suggestions">
+            <li>Filter for a city</li>
+            <li>or a state</li>
+        </ul>
+    </form>
+    <script>
+        const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+        const city = [];
+        fetch(endpoint)
+            .then((res) => res.json())
+            .then((data) => city.push(...data))
+            .catch((err) => console.log(err))
+
+        function findMatches(wordToMatch, city) {
+            return city.filter(place => {
+                const regex = new RegExp(wordToMatch, 'gi');
+                return place.city.match(regex) || place.state.match(regex);
+            });
+        }
+
+        function displayMatches() {
+            // console.log(this.value)
+            const matchArray = findMatches(this.value, city);
+            const html = matchArray.map(place => {
+                return `
+               <li>
+           <span class="name">${place.city}, ${place.state}</span>
+           <span class="population">${place.population}</span>
+               </li>
+              `
+            }).join('');
+            // Multiple Array to one String
+            uidata.innerHTML = html;
+        }
+        const input = document.querySelector(".search");
+        const uidata = document.querySelector(".suggestions");
+        input.addEventListener('change', displayMatches);
+        input.addEventListener('keyup', displayMatches);
+    </script>
+</body>
+
+</html>
