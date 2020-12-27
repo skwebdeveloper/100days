@@ -1,0 +1,132 @@
+$background: #343434 // Blackish
+$primary: #ECE41C //Yellow
+$secondary: #C8C2C2 //Gray
+$ternary: #445434 // Olive
+$br: 5px
+
+*
+  margin: 0
+  padding: 0
+  font-family: 'Monoton', cursive
+  
+body
+  box-sizing: border-box
+  font-family: 'Monoton', cursive
+  font-size: 26px
+  background-color: $background
+  transition: all 2s
+
+.ul__head
+  display: flex
+  flex-flow: row wrap
+  justify-content: center
+  color: $secondary
+  width: 100%
+  height: 40vh
+  background-color: $ternary
+  align-items: center
+
+li
+  list-style: none
+  margin: 10px
+  color: $secondary
+  letter-spacing: 3px
+  
+// li:nth-child(even)
+//   background: white
+
+.sub
+  margin: 10px
+  width: 100px
+  align-items: center
+  display: flex
+  justify-content: center
+  padding: 16px 32px
+  border-radius: $br
+  border: none
+.extra
+  padding: 16px 32px
+  margin: 10px
+  width: 100%
+
+.sub:hover
+  cursor: pointer
+
+// Increment Area   
+  
+.incrementfont
+  font-size: 30vh
+.incrementborder
+  border: 5px solid black
+  margin: 20px
+  padding: 20px
+  border-radius: $br
+
+.animations
+  animation: name 1s linear infinite
+  
+@keyframes name
+  0%
+    transform: translateX(5px)
+  25%
+    transform: translateX(50px)
+  50%
+    transform: translateX(0px)
+  75%
+    transform: translateX(-50px) 
+  100%
+    transform: translateX(-5px)  
+  
+.changecolor
+  color: $primary 
+  
+.backgroundchange
+  background-color: background
+
+.dimensionschanged
+  clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%)
+  width: 100%
+  height: 50vh
+  
+.shadowing
+  color: #202020
+  background-color: #2d2d2d
+  letter-spacing: .1em
+  font-size: 5rem
+  padding: 16px 32px
+  text-shadow:-1px -1px 1px #111,2px 2px 1px #363636
+  
+   
+    
+  
+  
+  
+  
+  
+  
+  
+h2
+  color: $secondary
+  
+
+.bgroup
+  padding: 16px 32px
+  margin: 10px
+  display: flex
+  flex-flow: row wrap
+  justify-content: center
+  align-items: center
+  background-color: background
+  border-radius: $br
+  
+
+.ul__head.colorchanger
+  background-color: $primary 
+  font-size: 40px
+  flex: 8
+  filter: grayscale(10%)
+  
+  
+  
+  
+  
