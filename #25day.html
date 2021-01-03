@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>LocalStorage</title>
+    <link rel="stylesheet" href="./dist/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h2>Notes</h2>
+        <p></p>
+        <ul class="plates">
+            <li>Add notes...</li>
+        </ul>
+        <form class="add-items">
+            <input type="text" name="item" placeholder="Add Notes" required>
+            <input type="submit" value="Promise">
+        </form>
+    </div>
+
+    <script>
+        const addItems = document.querySelector('.add-items');
+        const itemsList = document.querySelector('.plates');
+        const items = JSON.parse(localStorage.getItem("items")) || [];
+
+        function addItem(e) {
+            // This is for form reload
+            e.preventDefault();
+            // Selecting the input text
+            const text = (this.querySelector('[name=item]')).value;
+            const item = {
+                text,
+                done: false
+            };
+
+            items.push(item);
+            // Showing the value
+            plateList(items, itemsList);
+            // Local Storage
+            localStorage.setItem("items", JSON.stringify(items));
+            // Reset the form option
+            this.reset();
+        }
+
+        function plateList(plates = [], platesList) {
+            platesList.innerHTML = plates.map((plate, i) => {
+                return `
+        <li>
+        <input ${plate.done ? "checked" : ""} type="checkbox" data-index=${i} id="item${i}">
+         <label for="item${i}">${plate.text}</label>
+        </li>
+            `
+            }).join("");
+        }
+
+        function toggledone(e) {
+            if (!e.target.matches("input")) return;
+            const el = e.target;
+            // console.log(e.target);
+            const index = el.dataset.index;
+            // Toggle true or false
+            items[index].done = !items[index].done;
+            // Tick reserve 
+            localStorage.setItem("items", JSON.stringify(items));
+            plateList(items, itemsList);
+
+        }
+
+        addItems.addEventListener("submit", addItem);
+        itemsList.addEventListener("click", toggledone);
+        plateList(items, itemsList);
+
+        gsap.fromTo(".wrapper", {
+            duration: 0.3,
+            ease: "elastic.out(1, 0.3)",
+            rotate: -45,
+            scale: 0.1
+        }, {
+            rotate: 0,
+            scale: 1,
+            duration: 1,
+            ease: "elastic.out(1, 0.3)"
+        })
+    </script>
+
+
+</body>
+
+</html>
