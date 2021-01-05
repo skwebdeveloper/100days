@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disable</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+</head>
+<style>
+    body {
+        padding: 0;
+        margin: 0;
+        font-family: 'Quicksand', sans-serif;
+    }
+    
+    .form {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    input {
+        padding: 16px;
+        margin: 10px;
+        border-radius: 5px;
+        border: none;
+        background-color: aliceblue;
+        width: 50%;
+    }
+    
+    h1 {
+        text-align: center;
+    }
+    
+    button {
+        padding: 10px;
+        margin: 10px;
+        border: none;
+        border-radius: 10px;
+        letter-spacing: 1px;
+        font-size: 2vw;
+    }
+    
+    .super:hover {
+        cursor: pointer;
+        border-radius: 10px;
+    }
+</style>
+
+<body oncontextmenu="return false" , oncopy="return false">
+
+
+    <div class="form">
+        <h1 class="adding"></h1>
+        <label for="Name">Enter your name</label>
+        <input type="password" placeholder="Password" oncopy="return false">
+        <input type="password" placeholder="Re-check" onpaste="return false">
+        <h1 class="disabling"></h1>
+        <button class="super">Toggle Disabling</button>
+    </div>
+
+
+
+    <script>
+        const submit = document.querySelector(".adding");
+        const disabling = document.querySelector(".disabling");
+        const fullregion = document.querySelector(".form");
+        const bsuper = document.querySelector(".super");
+
+        setTimeout((e) => {
+            submit.innerHTML = "Disable Copy Paste 😅😅"
+        }, 10000);
+
+        setTimeout((e) => {
+            disabling.innerHTML = "Now I am disabling your right key for this particular area😅😅. Press right key"
+            fullregion.style.backgroundColor = "yellow"
+        }, 15000);
+
+        function toggling() {
+            fullregion.style.backgroundColor = "white";
+        }
+        bsuper.addEventListener("click", toggling);
+    </script>
+</body>
+
+</html>
