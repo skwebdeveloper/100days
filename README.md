@@ -48,3 +48,5 @@ If it doesn't work this is just beacause of limited requests period. Hope you do
 ### https://codesandbox.io/s/confident-banach-4li0e?file=/index.html
 ## Day 26
 ### https://codesandbox.io/s/27-day-crroj
+## Day 27 - Conept disable Copy and Paste
+### https://codesandbox.io/s/27-js-interview-7mhqb
